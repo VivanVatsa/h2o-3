@@ -228,7 +228,7 @@ public abstract class Lockable<T extends Lockable<T>> extends Keyed<T> {
               Lockable.this : old;
       if (_exact || l.is_locked(_job_key)) {
         // Update & set the new value
-        l.set_unlocked(l._lockers, _job_key);
+        l.set_unlocked(old._lockers, _job_key);
       }
       return l;
     }
